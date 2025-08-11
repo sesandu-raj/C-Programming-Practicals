@@ -10,25 +10,14 @@ int main(void){
 }
 
 int positive(void) {
-    int row;
+    int value;
     do
     {
         printf("Enter the number of rows :");
-        scanf("%d", &row);
+        scanf("%d", &value);
     } 
-    while (row<1);
-    return row;
-}
-
-int positive(void) {
-    int column;
-    do
-    {
-        printf("Enter the number of columns :");
-        scanf("%d", &column);
-    } 
-    while (column<1);
-    return column;
+    while (value<1);
+    return value;
 }
 
 void Box(int column, int row) {
