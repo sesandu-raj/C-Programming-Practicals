@@ -2,11 +2,27 @@
 
 int positive(void);
 void Box(int column, int row);
+int getColumns(void);
+int getRows(void);
 
 int main(void){
-    int column = positive();
-    int row = positive();
+    int column = getColumns();
+    int row = getRows();
     Box(column, row);
+}
+
+int getColumns(void) {
+    int column;
+    printf("Enter the number of columns :");
+    scanf("%d", &column);
+    return positive();
+}
+
+int getRows(void) {
+    int row;
+    printf("Enter the number of rows :");
+    scanf("%d", &row);
+    return positive();
 }
 
 int positive(void) {
