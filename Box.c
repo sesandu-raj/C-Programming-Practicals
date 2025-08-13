@@ -1,41 +1,36 @@
 # include <stdio.h>
 
 void Box(int column, int row);
-int getColumns(void);
-int getRows(void);
+int positive(const char promte[]);
 
 int main(void){
-    int column = getColumns();
-    int row = getRows();
+    int column = positive("Enter the number of columns :");
+    int row = positive("Enter the number of rows :");
     Box(column, row);
 }
 
-int getColumns(void) {
-    int column;
-    printf("Enter the number of columns :");
-    scanf("%d", &column);
+int positive(const char prompt[]){
+    int value;
+    int success;
 
-    if (column > 1) {
-        return column;
-    } else {
-        printf("Invalid input. Please enter a number greater than 1.\n");
-        return getColumns();
+    do{
+        printf("%s", prompt);
+        success = scanf("%d", &value);
+
+        //clear leftover characters in the input buffer
+        while (getchar() != '\n');
+
+        if(success!= 1){
+            printf("Invalid input. Letters are not allowed. Please enter a positive integer.\n");
+        }
+
+        else if (value < 1){
+            printf("Invalid input. Please enter a positive integer.\n");
+        }
     }
-   
-}
+    while (success != 1 || value < 1);
 
-int getRows(void) {
-    int row;
-    printf("Enter the number of rows :");
-    scanf("%d", &row);
-
-    if (row > 1) {
-        return row;
-    } else {
-        printf("Invalid input. Please enter a number greater than 1.\n");
-        return getRows();
-    }
-   
+    return value;
 }
 
 void Box(int column, int row) {
