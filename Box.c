@@ -1,6 +1,5 @@
 # include <stdio.h>
 
-int positive(void);
 void Box(int column, int row);
 int getColumns(void);
 int getRows(void);
@@ -15,25 +14,28 @@ int getColumns(void) {
     int column;
     printf("Enter the number of columns :");
     scanf("%d", &column);
-    return positive();
+
+    if (column > 1) {
+        return column;
+    } else {
+        printf("Invalid input. Please enter a number greater than 1.\n");
+        return getColumns();
+    }
+   
 }
 
 int getRows(void) {
     int row;
     printf("Enter the number of rows :");
     scanf("%d", &row);
-    return positive();
-}
 
-int positive(void) {
-    int value;
-    do
-    {
-        printf("Enter the number of rows :");
-        scanf("%d", &value);
-    } 
-    while (value<1);
-    return value;
+    if (row > 1) {
+        return row;
+    } else {
+        printf("Invalid input. Please enter a number greater than 1.\n");
+        return getRows();
+    }
+   
 }
 
 void Box(int column, int row) {
