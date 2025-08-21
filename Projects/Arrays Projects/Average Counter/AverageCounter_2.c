@@ -3,22 +3,28 @@
 #include <ctype.h> // for isspace()
 
 // This program calculates the average marks of students in multiple subjects and determines their positions based on the average marks.
+
+
 int positive(const char prompt[]);
 float calculate_average(int score[], int size);
 char *get_string(const char *prompt);
 void Position(double average[],char *student_names[], int No_of_Students);
 
+// Main function to run the program
 int main (void){
     printf("Average Counter\n");
 
     int No_of_Students = positive("Enter the number of students: ");
-    char *student_names[No_of_Students];
+    char *student_names[No_of_Students]; // Array to hold student names
 
     int subjects = positive("Enter the number of subjects: ");
-    int subject[subjects];
+    int subject[subjects]; // Array to hold marks for each subject
 
-    double average_marks[No_of_Students];
+    double average_marks[No_of_Students]; // Array to hold average marks for each student
 
+    printf("\n");
+
+    // Loop to get names and marks for each student
     for(int i=0; i<No_of_Students; i++){
         printf("Enter the name of student %d:\n", i + 1);
         char *name = get_string("Name: ");
@@ -30,18 +36,20 @@ int main (void){
 
         printf("Marks for %s:\n", name);
 
+        // Loop to get marks for each subject
         for(int j=0; j<subjects; j++){
             printf("Subject %d: ", j + 1);
             subject[j] = positive(" ");
         }
 
+        // Calculate average marks for the student
         int average = calculate_average(subject, subjects);
         average_marks[i] = average; // Store the average for each student
         printf("Average marks for %s: %.2f\n", name, average_marks[i]);
     }
 
     printf("\n");
-    Position(average_marks, student_names, No_of_Students);
+    Position(average_marks, student_names, No_of_Students); // Call function to determine positions based on average marks
 
     // Free memory for names after loop
     for(int i=0; i<No_of_Students; i++){
@@ -49,6 +57,7 @@ int main (void){
     }
 }
 
+// Function to get a positive integer input from the user
 int positive(const char prompt[]){
 int value;
 int success;
@@ -73,6 +82,7 @@ while (success != 1 || value < 1);
 return value;
 }
 
+// Function to calculate the average of an array of scores
 float calculate_average(int score[], int size) { //Pass the array as score and its size
     int sum = 0;
     for (int i = 0; i < size; i++) {
@@ -81,6 +91,7 @@ float calculate_average(int score[], int size) { //Pass the array as score and i
     return (float)sum / size;
 }
 
+// Function to get a string input from the user
 char *get_string(const char *prompt) {
     printf("%s", prompt);
     int capacity = 16, length = 0;
@@ -101,6 +112,7 @@ char *get_string(const char *prompt) {
     return buffer;
 }
 
+// Function to determine the position of students based on their average marks
 void Position(double average[],char *student_names[], int No_of_Students){
     for (int i =0; i< No_of_Students; i++){
 
