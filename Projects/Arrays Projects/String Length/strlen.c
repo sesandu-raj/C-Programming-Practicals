@@ -2,27 +2,22 @@
 #include <stdlib.h> // for malloc and realloc
 #include <ctype.h> // for isspace()
 
-// This program demonstrates dynamic memory allocation for a string input
 char *get_string(const char *prompt);
-
-// Function to calculate the length of a string excluding spaces
 int string_length(const char *name);
 
-// Main function to demonstrate the usage of dynamic string input
-int main (void){
-    char *text = get_string("Enter a the name: "); // Prompt for user input and pass it to get_string
-    if (!text) // Check if memory allocation was successful
-    {
+int main (void) {
+
+    char *name = get_string("Enter your name: ");
+    if (!name) {
         printf("Memory error!\n");
         return 1;
     }
-    
-    for (int i = 0; i < string_length(text); i++) // Or you can use "for(int i = 0; array[i] != '\0'; i++)"
-    {
-        printf("Element %d: %c , %d,  %p\n", i+1,text[i],text[i], (void*)&text[i]);
-    }
-    free(text); // Free the allocated memory
+
+    printf("Length of the name : %d \n", string_length(name));
+
+    free(name); // Free the allocated memory
     return 0;
+    
 }
 
 // Function to get a string input from the user

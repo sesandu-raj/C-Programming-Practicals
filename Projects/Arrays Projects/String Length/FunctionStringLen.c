@@ -3,7 +3,7 @@
 #include <ctype.h> // for isspace()
 
 char *get_string(const char *prompt);
-void string_length(char *name);
+void string_length(const char *name);
 
 int main (void) {
 
@@ -40,7 +40,7 @@ char *get_string(const char *prompt) {
     return buffer;
 }
 
-void string_length(char *name){
+void string_length(const char *name){
     int count = 0;
     for (int i = 0; name[i] != '\0'; i++) {
         if (!isspace(name[i])) {

@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include <stdlib.h> // for malloc and realloc
-#include <ctype.h> // for isspace()
 
 char *get_string(const char *prompt);
 
@@ -43,3 +42,5 @@ char *get_string(const char *prompt) {
     buffer[length] = '\0';
     return buffer;
 }
+
+// This program counts the length of a string entered by the user, with space characters included in the count.
