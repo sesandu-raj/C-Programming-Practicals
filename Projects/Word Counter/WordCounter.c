@@ -30,6 +30,7 @@ int count_words(const char *str) {
         if (isspace(str[i])) {
             in_word = 0;
         } else if (!in_word) {
+            in_word = 1;
             count++;
         }
     }
