@@ -12,6 +12,7 @@ int main (void) {
         printf("Memory error!\n");
         return 1;
     }
+
     string_length(name);
 
     free(name); // Free the allocated memory
@@ -40,9 +41,11 @@ char *get_string(const char *prompt) {
 }
 
 void string_length(char *name){
-    int length = 0;
-    while (name[length] != '\0') {
-        length++;
+    int count = 0;
+    for (int i = 0; name[i] != '\0'; i++) {
+        if (!isspace(name[i])) {
+            count++;
+        }
     }
-    printf("The length of your name is: %d\n", length);
+    printf("The length of your name is: %d\n", count);
 }
