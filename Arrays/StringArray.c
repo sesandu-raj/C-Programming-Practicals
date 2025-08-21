@@ -19,8 +19,10 @@ int main (void){
     
     for (int i = 0; i < string_length(text); i++) // Or you can use "for(int i = 0; array[i] != '\0'; i++)"
     {
-        printf("Element %d: %c , %d,  %p\n", i+1,text[i],text[i], (void*)&text[i]);
+        printf("Element %d: %c , %d,  %p \n", i+1,text[i],text[i], (void*)&text[i]);
     }
+
+    printf("The length of the string excluding spaces is: %d \n", string_length(text));
     free(text); // Free the allocated memory
     return 0;
 }
