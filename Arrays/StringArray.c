@@ -4,26 +4,15 @@
 
 char *get_string(const char *prompt);
 
-int main (void) {
-
-    char *name = get_string("Enter your name: ");
-    if (!name) {
+int main (void){
+    char *text = get_string("Enter a the name: ");
+    if (!text) {
         printf("Memory error!\n");
         return 1;
     }
-    
-    int length = 0;
-    while (name[length] != '\0') {
-        length++;
-    }
 
-    printf("The length of your name is: %d\n", length);
 
-    free(name); // Free the allocated memory
-    return 0;
-    
 }
-
 char *get_string(const char *prompt) {
     printf("%s", prompt);
     int capacity = 16, length = 0;

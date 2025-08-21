@@ -3,6 +3,7 @@
 #include <ctype.h> // for isspace()
 
 char *get_string(const char *prompt);
+void string_length(char *name);
 
 int main (void) {
 
@@ -11,13 +12,7 @@ int main (void) {
         printf("Memory error!\n");
         return 1;
     }
-    
-    int length = 0;
-    while (name[length] != '\0') {
-        length++;
-    }
-
-    printf("The length of your name is: %d\n", length);
+    string_length(name);
 
     free(name); // Free the allocated memory
     return 0;
@@ -42,4 +37,12 @@ char *get_string(const char *prompt) {
     }
     buffer[length] = '\0';
     return buffer;
+}
+
+void string_length(char *name){
+    int length = 0;
+    while (name[length] != '\0') {
+        length++;
+    }
+    printf("The length of your name is: %d\n", length);
 }
