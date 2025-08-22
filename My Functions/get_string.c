@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h> // for isspace()
 
 // Function prototype
 char *get_string(const char *prompt);
