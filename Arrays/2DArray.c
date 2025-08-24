@@ -11,7 +11,7 @@ int main (void){
 
     for(int i = 0; i < no_of_students; i++) {
         printf("Enter name of student %d: ", i + 1);
-        scanf("%49s", names[i]);
+        scanf("%49s", names[i]); 
         int length = strlen(names[i]);
         name_lengths[i] = length;
         printf("Length of name %s: %d\n",names[i], name_lengths[i]);
