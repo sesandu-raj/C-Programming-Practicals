@@ -7,6 +7,7 @@ char *ceaser_cipher_encoder (char message[],int key_value);
 char *ceaser_cipher_decoder (char message[], int key_value);
 int positive(const char prompt[]);
 
+// Main function
 int main (void)
 {
     char *message = get_string("Enter Your Message : ");
