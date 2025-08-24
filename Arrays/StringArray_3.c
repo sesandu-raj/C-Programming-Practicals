@@ -11,7 +11,7 @@ int main (void){
     }
 
     printf("Enter Your Name: ");
-    scanf("%s", array); // Read a string from user input
+    scanf("%49s", array); // Read a string from user input with a limit of 49 characters to prevent overflow
 
     printf("You entered: %s\n", array); // Print the entered string
     printf("Address of array: %p\n", (void*)array); // Print the address of the array[0] because array is a pointer to the first element
