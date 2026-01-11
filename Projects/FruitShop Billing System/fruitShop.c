@@ -22,7 +22,7 @@ int main() {
     Fruit fruits[MAX_FRUITS];
     int count = 0;
     int choice;
-    FILE *file;
+    FILE *file; // Declare the variable. This is a special data type defined in C (inside <stdio.h>). It contains all the information needed to control a file (like where the file starts, where the cursor is currently reading, etc.).
 
     // 1. Load data from text file
     file = fopen(INPUT_FILE, "r");
