@@ -1,0 +1,7 @@
+"Item","Unit Price","Quantity","Total"
+"Apple","60.00","8","480.00"
+"Orange","35.50","9","319.50"
+"Mango","55.00","7","385.00"
+"Banana","8.00","6","48.00"
+
+"Grand Total",,,"Rs. 1232.50"
