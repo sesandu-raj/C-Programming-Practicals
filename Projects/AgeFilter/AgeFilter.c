@@ -29,15 +29,12 @@ int main() {
     
     for (i = 0; i < 10; i++) {
         // Check the condition: Age must be >= 15 AND <= 25
-        if (ages[i] >= 15 && ages[i] <= 25) {
-            printf("%s (Age: %d)\n", names[i], ages[i]);
-            found = 1;
-        }
+        // Condition ? (True Action 1, True Action 2) : (False Action)
+        (ages[i] >= 15 && ages[i] <= 25) ? (printf("%s (Age: %d)\n", names[i], ages[i]), found = 1) : 0;
     }
 
-    if (found == 0) {
-        printf("No students found in this age range.\n");
-    }
+    // You can even do the final check with a ternary operator
+    (found == 0) ? printf("No students found in this age range.\n") : 0;
 
     return 0;
 }
